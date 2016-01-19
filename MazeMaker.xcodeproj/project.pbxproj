@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C8DB0ED1C4D5EA300509419 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */; };
+		1C9892201C4DD3AC009D2310 /* AldousBroder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */; };
+		1CF04B881C4D33120088B31F /* GridLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF04B871C4D33120088B31F /* GridLocationTests.swift */; };
+		1CF04B8A1C4D34D10088B31F /* CellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF04B891C4D34D10088B31F /* CellTests.swift */; };
+		1CF04B8C1C4D43E50088B31F /* OrthogonalCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF04B8B1C4D43E50088B31F /* OrthogonalCellTests.swift */; };
+		1CF04B8E1C4D48390088B31F /* GridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF04B8D1C4D48390088B31F /* GridTests.swift */; };
+		1CF04B901C4D48A10088B31F /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF04B8F1C4D48A10088B31F /* TestCell.swift */; };
+		1CF04B921C4D4A4D0088B31F /* OrthogonalLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF04B911C4D4A4D0088B31F /* OrthogonalLayoutTests.swift */; };
+		1CF04B941C4D4B410088B31F /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF04B931C4D4B410088B31F /* Layout.swift */; };
 		1CF119371C4C74C800287CAC /* MazeMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF119361C4C74C800287CAC /* MazeMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CF1193E1C4C74C800287CAC /* MazeMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF119331C4C74C800287CAC /* MazeMaker.framework */; };
-		1CF119431C4C74C800287CAC /* MazeMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF119421C4C74C800287CAC /* MazeMakerTests.swift */; };
+		1CF1194E1C4C762000287CAC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1194D1C4C762000287CAC /* Location.swift */; };
+		1CF119501C4C765C00287CAC /* GridLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1194F1C4C765C00287CAC /* GridLocation.swift */; };
+		1CF119521C4C768D00287CAC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF119511C4C768D00287CAC /* Cell.swift */; };
+		1CF119541C4C80F400287CAC /* OrthogonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF119531C4C80F400287CAC /* OrthogonalCell.swift */; };
+		1CF1195A1C4C872600287CAC /* OrthogonalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF119591C4C872600287CAC /* OrthogonalLayout.swift */; };
+		1CF1195C1C4C898500287CAC /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1195B1C4C898500287CAC /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +37,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
+		1C8DB0EE1C4D93DC00509419 /* Maze Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Maze Playground.playground"; sourceTree = SOURCE_ROOT; };
+		1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AldousBroder.swift; sourceTree = "<group>"; };
+		1CF04B871C4D33120088B31F /* GridLocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLocationTests.swift; sourceTree = "<group>"; };
+		1CF04B891C4D34D10088B31F /* CellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTests.swift; sourceTree = "<group>"; };
+		1CF04B8B1C4D43E50088B31F /* OrthogonalCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthogonalCellTests.swift; sourceTree = "<group>"; };
+		1CF04B8D1C4D48390088B31F /* GridTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridTests.swift; sourceTree = "<group>"; };
+		1CF04B8F1C4D48A10088B31F /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		1CF04B911C4D4A4D0088B31F /* OrthogonalLayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthogonalLayoutTests.swift; sourceTree = "<group>"; };
+		1CF04B931C4D4B410088B31F /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		1CF119331C4C74C800287CAC /* MazeMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MazeMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF119361C4C74C800287CAC /* MazeMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MazeMaker.h; sourceTree = "<group>"; };
 		1CF119381C4C74C800287CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CF1193D1C4C74C800287CAC /* MazeMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MazeMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CF119421C4C74C800287CAC /* MazeMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeMakerTests.swift; sourceTree = "<group>"; };
 		1CF119441C4C74C800287CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CF1194D1C4C762000287CAC /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1CF1194F1C4C765C00287CAC /* GridLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLocation.swift; sourceTree = "<group>"; };
+		1CF119511C4C768D00287CAC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		1CF119531C4C80F400287CAC /* OrthogonalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthogonalCell.swift; sourceTree = "<group>"; };
+		1CF119591C4C872600287CAC /* OrthogonalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthogonalLayout.swift; sourceTree = "<group>"; };
+		1CF1195B1C4C898500287CAC /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +82,7 @@
 		1CF119291C4C74C800287CAC = {
 			isa = PBXGroup;
 			children = (
+				1C8DB0EE1C4D93DC00509419 /* Maze Playground.playground */,
 				1CF119351C4C74C800287CAC /* MazeMaker */,
 				1CF119411C4C74C800287CAC /* MazeMakerTests */,
 				1CF119341C4C74C800287CAC /* Products */,
@@ -72,7 +102,16 @@
 			isa = PBXGroup;
 			children = (
 				1CF119361C4C74C800287CAC /* MazeMaker.h */,
+				1CF1194D1C4C762000287CAC /* Location.swift */,
+				1CF1194F1C4C765C00287CAC /* GridLocation.swift */,
+				1CF119511C4C768D00287CAC /* Cell.swift */,
+				1CF119531C4C80F400287CAC /* OrthogonalCell.swift */,
+				1CF119591C4C872600287CAC /* OrthogonalLayout.swift */,
 				1CF119381C4C74C800287CAC /* Info.plist */,
+				1CF1195B1C4C898500287CAC /* Grid.swift */,
+				1CF04B931C4D4B410088B31F /* Layout.swift */,
+				1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */,
+				1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */,
 			);
 			path = MazeMaker;
 			sourceTree = "<group>";
@@ -80,8 +119,13 @@
 		1CF119411C4C74C800287CAC /* MazeMakerTests */ = {
 			isa = PBXGroup;
 			children = (
-				1CF119421C4C74C800287CAC /* MazeMakerTests.swift */,
+				1CF04B871C4D33120088B31F /* GridLocationTests.swift */,
+				1CF04B891C4D34D10088B31F /* CellTests.swift */,
 				1CF119441C4C74C800287CAC /* Info.plist */,
+				1CF04B8B1C4D43E50088B31F /* OrthogonalCellTests.swift */,
+				1CF04B8D1C4D48390088B31F /* GridTests.swift */,
+				1CF04B8F1C4D48A10088B31F /* TestCell.swift */,
+				1CF04B911C4D4A4D0088B31F /* OrthogonalLayoutTests.swift */,
 			);
 			path = MazeMakerTests;
 			sourceTree = "<group>";
@@ -194,6 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF119541C4C80F400287CAC /* OrthogonalCell.swift in Sources */,
+				1C9892201C4DD3AC009D2310 /* AldousBroder.swift in Sources */,
+				1C8DB0ED1C4D5EA300509419 /* Algorithm.swift in Sources */,
+				1CF119501C4C765C00287CAC /* GridLocation.swift in Sources */,
+				1CF1194E1C4C762000287CAC /* Location.swift in Sources */,
+				1CF1195A1C4C872600287CAC /* OrthogonalLayout.swift in Sources */,
+				1CF04B941C4D4B410088B31F /* Layout.swift in Sources */,
+				1CF119521C4C768D00287CAC /* Cell.swift in Sources */,
+				1CF1195C1C4C898500287CAC /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +254,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF119431C4C74C800287CAC /* MazeMakerTests.swift in Sources */,
+				1CF04B921C4D4A4D0088B31F /* OrthogonalLayoutTests.swift in Sources */,
+				1CF04B881C4D33120088B31F /* GridLocationTests.swift in Sources */,
+				1CF04B8C1C4D43E50088B31F /* OrthogonalCellTests.swift in Sources */,
+				1CF04B901C4D48A10088B31F /* TestCell.swift in Sources */,
+				1CF04B8A1C4D34D10088B31F /* CellTests.swift in Sources */,
+				1CF04B8E1C4D48390088B31F /* GridTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +366,7 @@
 		1CF119481C4C74C800287CAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +377,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.jamisbuck.MazeMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1CF119491C4C74C800287CAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +437,7 @@
 				1CF119491C4C74C800287CAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CF1194A1C4C74C800287CAC /* Build configuration list for PBXNativeTarget "MazeMakerTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +446,7 @@
 				1CF1194C1C4C74C800287CAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
