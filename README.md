@@ -1,8 +1,8 @@
 # MazeMaker
 
-This is a collection of utilities for instantiating, manipulating, and
-rendering grids. It is specifically designed for representing and creating
-mazes--randomly generated spanning trees on these grids.
+This is a collection of utilities, written in Swift, for instantiating,
+manipulating, and rendering grids. It is specifically designed for representing
+and creating mazes--randomly generated spanning trees on these grids.
 
 ## Usage
 
