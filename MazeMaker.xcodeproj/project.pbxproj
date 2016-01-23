@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C8DB0ED1C4D5EA300509419 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */; };
 		1C9892201C4DD3AC009D2310 /* AldousBroder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */; };
+		1CAA32051C53EEB5007507E1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA32041C53EEB5007507E1 /* README.md */; };
 		1CCBF09A1C509C100052E1A0 /* RecursiveBacktracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF0991C509C100052E1A0 /* RecursiveBacktracker.swift */; };
 		1CCBF09C1C509E6B0052E1A0 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF09B1C509E6B0052E1A0 /* Set.swift */; };
 		1CCBF09E1C509F770052E1A0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBF09D1C509F770052E1A0 /* Array.swift */; };
@@ -43,6 +44,7 @@
 		1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		1C8DB0EE1C4D93DC00509419 /* Maze Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Maze Playground.playground"; sourceTree = SOURCE_ROOT; };
 		1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AldousBroder.swift; sourceTree = "<group>"; };
+		1CAA32041C53EEB5007507E1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1CCBF0991C509C100052E1A0 /* RecursiveBacktracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveBacktracker.swift; sourceTree = "<group>"; };
 		1CCBF09B1C509E6B0052E1A0 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		1CCBF09D1C509F770052E1A0 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -85,9 +87,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CAA32021C53EE58007507E1 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */,
+				1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */,
+				1CCBF0991C509C100052E1A0 /* RecursiveBacktracker.swift */,
+			);
+			name = Algorithms;
+			sourceTree = "<group>";
+		};
+		1CAA32031C53EE67007507E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1CCBF09B1C509E6B0052E1A0 /* Set.swift */,
+				1CCBF09D1C509F770052E1A0 /* Array.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		1CF119291C4C74C800287CAC = {
 			isa = PBXGroup;
 			children = (
+				1CAA32041C53EEB5007507E1 /* README.md */,
 				1C8DB0EE1C4D93DC00509419 /* Maze Playground.playground */,
 				1CF119351C4C74C800287CAC /* MazeMaker */,
 				1CF119411C4C74C800287CAC /* MazeMakerTests */,
@@ -107,20 +129,17 @@
 		1CF119351C4C74C800287CAC /* MazeMaker */ = {
 			isa = PBXGroup;
 			children = (
+				1CAA32031C53EE67007507E1 /* Extensions */,
+				1CAA32021C53EE58007507E1 /* Algorithms */,
 				1CF119361C4C74C800287CAC /* MazeMaker.h */,
+				1CF119381C4C74C800287CAC /* Info.plist */,
 				1CF1194D1C4C762000287CAC /* Location.swift */,
 				1CF1194F1C4C765C00287CAC /* GridLocation.swift */,
 				1CF119511C4C768D00287CAC /* Cell.swift */,
 				1CF119531C4C80F400287CAC /* OrthogonalCell.swift */,
-				1CF119591C4C872600287CAC /* OrthogonalLayout.swift */,
-				1CF119381C4C74C800287CAC /* Info.plist */,
-				1CF1195B1C4C898500287CAC /* Grid.swift */,
 				1CF04B931C4D4B410088B31F /* Layout.swift */,
-				1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */,
-				1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */,
-				1CCBF0991C509C100052E1A0 /* RecursiveBacktracker.swift */,
-				1CCBF09B1C509E6B0052E1A0 /* Set.swift */,
-				1CCBF09D1C509F770052E1A0 /* Array.swift */,
+				1CF119591C4C872600287CAC /* OrthogonalLayout.swift */,
+				1CF1195B1C4C898500287CAC /* Grid.swift */,
 			);
 			path = MazeMaker;
 			sourceTree = "<group>";
@@ -251,6 +270,7 @@
 				1C9892201C4DD3AC009D2310 /* AldousBroder.swift in Sources */,
 				1C8DB0ED1C4D5EA300509419 /* Algorithm.swift in Sources */,
 				1CF119501C4C765C00287CAC /* GridLocation.swift in Sources */,
+				1CAA32051C53EEB5007507E1 /* README.md in Sources */,
 				1CF1194E1C4C762000287CAC /* Location.swift in Sources */,
 				1CF1195A1C4C872600287CAC /* OrthogonalLayout.swift in Sources */,
 				1CCBF09A1C509C100052E1A0 /* RecursiveBacktracker.swift in Sources */,
