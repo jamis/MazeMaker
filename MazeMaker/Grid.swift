@@ -35,10 +35,7 @@ public class Grid {
 
   public func sample() -> Cell {
     precondition(cells.count > 0, "cannot sample an empty grid")
-
-    let n = Int(arc4random_uniform(UInt32(cells.count)))
-    let i = cells.startIndex.advancedBy(n)
-    return cells[i]
+    return cells.sample()!
   }
 
   public func toString() -> String {
