@@ -7,7 +7,7 @@ public class OrthogonalLayout: Layout {
     self.columns = columns
   }
 
-  public override func build(grid: Grid) {
+  public func build(grid: Grid) {
     for row in 0..<rows {
       for column in 0..<columns {
         let location = GridLocation(row: row, column: column)
@@ -29,7 +29,7 @@ public class OrthogonalLayout: Layout {
     }
   }
 
-  public override func renderAsString(grid: Grid) -> String {
+  public func renderAsString(grid: Grid) -> String {
     var string = ""
 
     for _ in 0..<columns {
@@ -56,5 +56,9 @@ public class OrthogonalLayout: Layout {
     }
 
     return string
+  }
+
+  public func dimensionsWithScale(scale: Double) -> CGSize {
+    return CGSize(width: scale * Double(columns), height: scale * Double(rows))
   }
 }

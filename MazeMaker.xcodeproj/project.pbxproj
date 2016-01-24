@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5587CD1C553F2B00F34283 /* MazeCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5587CC1C553F2B00F34283 /* MazeCanvas.swift */; };
 		1C8DB0ED1C4D5EA300509419 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */; };
 		1C9892201C4DD3AC009D2310 /* AldousBroder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */; };
 		1CAA32051C53EEB5007507E1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA32041C53EEB5007507E1 /* README.md */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C5587CC1C553F2B00F34283 /* MazeCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeCanvas.swift; sourceTree = "<group>"; };
 		1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		1C8DB0EE1C4D93DC00509419 /* Maze Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Maze Playground.playground"; sourceTree = SOURCE_ROOT; };
 		1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AldousBroder.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				1CF04B931C4D4B410088B31F /* Layout.swift */,
 				1CF119591C4C872600287CAC /* OrthogonalLayout.swift */,
 				1CF1195B1C4C898500287CAC /* Grid.swift */,
+				1C5587CC1C553F2B00F34283 /* MazeCanvas.swift */,
 			);
 			path = MazeMaker;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				1CF119501C4C765C00287CAC /* GridLocation.swift in Sources */,
 				1CAA32051C53EEB5007507E1 /* README.md in Sources */,
 				1CF1194E1C4C762000287CAC /* Location.swift in Sources */,
+				1C5587CD1C553F2B00F34283 /* MazeCanvas.swift in Sources */,
 				1CF1195A1C4C872600287CAC /* OrthogonalLayout.swift in Sources */,
 				1CCBF09A1C509C100052E1A0 /* RecursiveBacktracker.swift in Sources */,
 				1CF04B941C4D4B410088B31F /* Layout.swift in Sources */,
