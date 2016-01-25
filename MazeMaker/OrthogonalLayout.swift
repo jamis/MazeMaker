@@ -75,8 +75,4 @@ public class OrthogonalLayout: Layout {
 
     return string
   }
-
-  public func dimensionsWithScale(scale: Double) -> CGSize {
-    return CGSize(width: scale * Double(columns), height: scale * Double(rows))
-  }
 }
