@@ -25,28 +25,32 @@ public class OrthoWallwiseGeometryGenerator : GeometryGenerator {
     CGContextSetLineCap(ctx, CGLineCap.Round)
     CGContextSetLineWidth(ctx, 1.0)
 
-    CGContextBeginPath(ctx)
-    CGContextMoveToPoint(ctx, margin, margin)
-    CGContextAddLineToPoint(ctx, self.bounds.size.width-margin, margin)
-    CGContextMoveToPoint(ctx, margin, margin)
-    CGContextAddLineToPoint(ctx, margin, self.bounds.size.height-margin)
-
     for cell in grid.cells {
       if let cell = cell as? OrthogonalCell {
-        let x = CGFloat(cell.gridLocation.column) * scale
-        let y = CGFloat(cell.gridLocation.row) * scale
+        let x = CGFloat(cell.gridLocation.column) * scale + margin
+        let y = CGFloat(cell.gridLocation.row) * scale + margin
 
-        let x2 = CGFloat(cell.gridLocation.column+1) * scale
-        let y2 = CGFloat(cell.gridLocation.row+1) * scale
+        let x2 = CGFloat(cell.gridLocation.column+1) * scale + margin
+        let y2 = CGFloat(cell.gridLocation.row+1) * scale + margin
+
+        if cell.north == nil {
+          CGContextMoveToPoint(ctx, x, y)
+          CGContextAddLineToPoint(ctx, x2, y)
+        }
+
+        if cell.west == nil {
+          CGContextMoveToPoint(ctx, x, y)
+          CGContextAddLineToPoint(ctx, x, y2)
+        }
 
         if !cell.isLinkedWith(cell.south) {
-          CGContextMoveToPoint(ctx, margin + x, margin + y2)
-          CGContextAddLineToPoint(ctx, margin + x2, margin + y2)
+          CGContextMoveToPoint(ctx, x, y2)
+          CGContextAddLineToPoint(ctx, x2, y2)
         }
 
         if !cell.isLinkedWith(cell.east) {
-          CGContextMoveToPoint(ctx, margin + x2, margin + y)
-          CGContextAddLineToPoint(ctx, margin + x2, margin + y2)
+          CGContextMoveToPoint(ctx, x2, y)
+          CGContextAddLineToPoint(ctx, x2, y2)
         }
       }
     }

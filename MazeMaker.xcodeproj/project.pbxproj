@@ -95,6 +95,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C533C331C55B846003F4342 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				1C533C2D1C55A28D003F4342 /* GeometryGenerator.swift */,
+				1C533C2F1C55A33F003F4342 /* OrthoLinewiseGeometryGenerator.swift */,
+				1C533C311C55B6A1003F4342 /* OrthoWallwiseGeometryGenerator.swift */,
+			);
+			name = Geometry;
+			sourceTree = "<group>";
+		};
+		1C533C341C55B859003F4342 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1C5587CC1C553F2B00F34283 /* MazeCanvas.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		1CAA32021C53EE58007507E1 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +155,8 @@
 		1CF119351C4C74C800287CAC /* MazeMaker */ = {
 			isa = PBXGroup;
 			children = (
+				1C533C341C55B859003F4342 /* UI */,
+				1C533C331C55B846003F4342 /* Geometry */,
 				1CAA32031C53EE67007507E1 /* Extensions */,
 				1CAA32021C53EE58007507E1 /* Algorithms */,
 				1CF119361C4C74C800287CAC /* MazeMaker.h */,
@@ -148,10 +168,6 @@
 				1CF04B931C4D4B410088B31F /* Layout.swift */,
 				1CF119591C4C872600287CAC /* OrthogonalLayout.swift */,
 				1CF1195B1C4C898500287CAC /* Grid.swift */,
-				1C5587CC1C553F2B00F34283 /* MazeCanvas.swift */,
-				1C533C2D1C55A28D003F4342 /* GeometryGenerator.swift */,
-				1C533C2F1C55A33F003F4342 /* OrthoLinewiseGeometryGenerator.swift */,
-				1C533C311C55B6A1003F4342 /* OrthoWallwiseGeometryGenerator.swift */,
 			);
 			path = MazeMaker;
 			sourceTree = "<group>";

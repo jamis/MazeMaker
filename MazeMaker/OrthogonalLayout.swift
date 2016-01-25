@@ -1,10 +1,14 @@
 public class OrthogonalLayout: Layout {
   public let rows: Int
   public let columns: Int
+  public let wrapRows: Bool
+  public let wrapColumns: Bool
 
-  public init(rows: Int, columns: Int) {
+  public init(rows: Int, columns: Int, wrapRows: Bool = false, wrapColumns: Bool = false) {
     self.rows = rows
     self.columns = columns
+    self.wrapRows = wrapRows
+    self.wrapColumns = wrapColumns
   }
 
   public func build(grid: Grid) {
@@ -24,6 +28,20 @@ public class OrthogonalLayout: Layout {
         if let west = grid.at(west) as? OrthogonalCell {
           cell.west = west
           west.east = cell
+        }
+
+        if wrapColumns && column+1 == columns {
+          let startCol = GridLocation(row: row, column: 0)
+          let startCell = grid.at(startCol) as! OrthogonalCell
+          cell.east = startCell
+          startCell.west = cell
+        }
+
+        if wrapRows && row+1 == rows {
+          let startRow = GridLocation(row: 0, column: column)
+          let startCell = grid.at(startRow) as! OrthogonalCell
+          cell.south = startCell
+          startCell.north = cell
         }
       }
     }
