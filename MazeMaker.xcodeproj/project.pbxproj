@@ -15,6 +15,7 @@
 		1C533C3A1C55C1B1003F4342 /* PolarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C533C391C55C1B1003F4342 /* PolarLocation.swift */; };
 		1C533C3C1C55C528003F4342 /* PolarWallwiseGeometryGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C533C3B1C55C528003F4342 /* PolarWallwiseGeometryGenerator.swift */; };
 		1C5587CD1C553F2B00F34283 /* MazeCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5587CC1C553F2B00F34283 /* MazeCanvas.swift */; };
+		1C87CD701C5AC03E0058449B /* MazeMaker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 1C87CD6F1C5AC03E0058449B /* MazeMaker.podspec */; };
 		1C8DB0ED1C4D5EA300509419 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */; };
 		1C9892201C4DD3AC009D2310 /* AldousBroder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */; };
 		1CAA32051C53EEB5007507E1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA32041C53EEB5007507E1 /* README.md */; };
@@ -57,6 +58,7 @@
 		1C533C391C55C1B1003F4342 /* PolarLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarLocation.swift; sourceTree = "<group>"; };
 		1C533C3B1C55C528003F4342 /* PolarWallwiseGeometryGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarWallwiseGeometryGenerator.swift; sourceTree = "<group>"; };
 		1C5587CC1C553F2B00F34283 /* MazeCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeCanvas.swift; sourceTree = "<group>"; };
+		1C87CD6F1C5AC03E0058449B /* MazeMaker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MazeMaker.podspec; sourceTree = "<group>"; };
 		1C8DB0EC1C4D5EA300509419 /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		1C8DB0EE1C4D93DC00509419 /* Maze Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Maze Playground.playground"; sourceTree = SOURCE_ROOT; };
 		1C98921F1C4DD3AC009D2310 /* AldousBroder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AldousBroder.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		1CF119291C4C74C800287CAC = {
 			isa = PBXGroup;
 			children = (
+				1C87CD6F1C5AC03E0058449B /* MazeMaker.podspec */,
 				1CAA32041C53EEB5007507E1 /* README.md */,
 				1C8DB0EE1C4D93DC00509419 /* Maze Playground.playground */,
 				1CF119351C4C74C800287CAC /* MazeMaker */,
@@ -260,6 +263,7 @@
 				TargetAttributes = {
 					1CF119321C4C74C800287CAC = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = BXDNJ8W9J6;
 					};
 					1CF1193C1C4C74C800287CAC = {
 						CreatedOnToolsVersion = 7.2;
@@ -289,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C87CD701C5AC03E0058449B /* MazeMaker.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,12 +452,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MazeMaker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jamisbuck.MazeMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -465,12 +472,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MazeMaker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jamisbuck.MazeMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
