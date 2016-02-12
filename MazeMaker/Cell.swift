@@ -40,6 +40,10 @@ public class Cell: Hashable {
     }
   }
 
+  public func isDeadEnd() -> Bool {
+    return links.count == 1
+  }
+
   public func reset() {
     links.removeAll()
   }
