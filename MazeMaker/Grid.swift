@@ -52,6 +52,26 @@ public class Grid {
     }
   }
 
+  public func distancesFromCell(cell: Cell) -> Distances {
+    let distances = Distances(root: cell)
+    let queue = PriorityQueue<Cell>(weighting: .LowestFirst)
+    queue.fromCollection(cells.map { ($0, ($0 == cell) ? 0 : Int.max) })
+
+    while !queue.isEmpty {
+      let current = queue.next()!
+      let nextDistance = current.priority + 1
+
+      for neighbor in current.item.links {
+        if nextDistance < queue[neighbor] {
+          queue[neighbor] = nextDistance
+          distances[neighbor] = nextDistance
+        }
+      }
+    }
+
+    return distances
+  }
+
   public func toString() -> String {
     return layout.renderAsString(self)
   }

@@ -52,8 +52,8 @@ public class PolarWallwiseGeometryGenerator : GeometryGenerator {
         }
 
         if !cell.isLinkedWith(cell.ccw) && cell != cell.ccw {
-          CGContextMoveToPoint(ctx, ax, ay)
-          CGContextAddLineToPoint(ctx, bx, by)
+          //CGContextMoveToPoint(ctx, ax, ay)
+          //CGContextAddLineToPoint(ctx, bx, by)
         }
       }
     }
