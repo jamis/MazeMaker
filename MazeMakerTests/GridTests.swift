@@ -2,8 +2,16 @@ import XCTest
 @testable import MazeMaker
 
 class GridTests: XCTestCase {
+  class TestLayout: Layout {
+    func build(grid: Grid) {
+    }
 
-  let grid = Grid(layout: Layout())
+    func renderAsString(grid: Grid) -> String {
+      return ""
+    }
+  }
+
+  let grid = Grid(layout: TestLayout())
 
   func testGridShouldStartEmpty() {
     XCTAssert(grid.cells.isEmpty)

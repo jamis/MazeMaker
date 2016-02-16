@@ -65,7 +65,8 @@ public class BinaryHeap<U> {
     if index > 0 {
       let tmp = list[0]
       list[0] = list[index]
-      list[index] = tmp
+      list[index] = list[list.count-1]
+      list[list.count-1] = tmp
     }
 
     delete()

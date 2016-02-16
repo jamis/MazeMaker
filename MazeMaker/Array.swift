@@ -1,7 +1,7 @@
 extension Array {
   public func sample() -> Array.Element? {
     if count > 0 {
-      let offset = Int(arc4random_uniform(UInt32(count)))
+      let offset = Int(rand()) % count
       return self[offset]
     } else {
       return nil
@@ -12,7 +12,7 @@ extension Array {
     var copy = self
 
     for i in 0..<copy.count {
-      let j = Int(arc4random_uniform(UInt32(i+1)))
+      let j = Int(rand()) % (i+1)
       if i != j {
         let temp = copy[i]
         copy[i] = copy[j]

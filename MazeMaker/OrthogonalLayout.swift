@@ -56,12 +56,15 @@ public class OrthogonalLayout: Layout {
     string += "+\n"
 
     for row in 0..<rows {
-      string += "|"
       var bottom = "+"
 
       for column in 0..<columns {
         let loc = GridLocation(row: row, column: column)
         let cell = grid.at(loc) as! OrthogonalCell
+
+        if column == 0 {
+          string += (cell.isLinkedWith(cell.west) ? " " : "|")
+        }
 
         string += "   "
         string += cell.isLinkedWith(cell.east) ? " " : "|"
