@@ -1,7 +1,7 @@
 @testable import MazeMaker
 
 class TestLocation: Location {
-  private(set) var position: Int = 0
+  fileprivate(set) var position: Int = 0
 
   init(position: Int) {
     self.position = position

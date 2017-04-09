@@ -3,10 +3,10 @@ import XCTest
 
 class GridTests: XCTestCase {
   class TestLayout: Layout {
-    func build(grid: Grid) {
+    func build(_ grid: Grid) {
     }
 
-    func renderAsString(grid: Grid) -> String {
+    func renderAsString(_ grid: Grid) -> String {
       return ""
     }
   }

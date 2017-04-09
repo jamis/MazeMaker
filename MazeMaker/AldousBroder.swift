@@ -1,9 +1,9 @@
 import Foundation
 
-public class AldousBroder : Algorithm {
+open class AldousBroder : Algorithm {
   public init() { }
 
-  public func applyTo(grid: Grid) {
+  open func applyTo(_ grid: Grid) {
     var cell = grid.sample()
     var count = grid.cells.count - 1
 
@@ -12,7 +12,7 @@ public class AldousBroder : Algorithm {
 
       if neighbor.links.isEmpty {
         cell.linkWith(neighbor)
-        count--
+        count -= 1
       }
 
       cell = neighbor

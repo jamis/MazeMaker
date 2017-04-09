@@ -1,10 +1,10 @@
-public class PolarWallwiseGeometryGenerator : GeometryGenerator {
+open class PolarWallwiseGeometryGenerator : GeometryGenerator {
   let grid: Grid
   let layout: PolarLayout
   let scale: CGFloat
   let margin: CGFloat
 
-  public let bounds: CGRect
+  open let bounds: CGRect
 
   public required init(grid: Grid, scale: CGFloat, margin: CGFloat) {
     self.grid = grid
@@ -16,14 +16,14 @@ public class PolarWallwiseGeometryGenerator : GeometryGenerator {
       height: CGFloat(layout.rings * 2) * scale + margin*2)
   }
 
-  public func render(ctx: CGContextRef) {
-    UIColor.blackColor().setStroke()
-    UIColor.whiteColor().setFill()
+  open func render(_ ctx: CGContext) {
+    UIColor.black.setStroke()
+    UIColor.white.setFill()
 
-    CGContextFillRect(ctx, bounds)
+    ctx.fill(bounds)
 
-    CGContextSetLineCap(ctx, CGLineCap.Round)
-    CGContextSetLineWidth(ctx, 1.0)
+    ctx.setLineCap(CGLineCap.round)
+    ctx.setLineWidth(1.0)
 
     let ox = bounds.size.width / 2
     let oy = bounds.size.height / 2
@@ -42,13 +42,13 @@ public class PolarWallwiseGeometryGenerator : GeometryGenerator {
         let by = oy + outerRadius * sin(thetaCCW)
 
         if cell.outward.isEmpty {
-          CGContextMoveToPoint(ctx, bx, by)
-          CGContextAddArc(ctx, ox, oy, outerRadius, thetaCCW, thetaCW, 0)
+          ctx.move(to: CGPoint(x: bx, y: by))
+            ctx.addArc(center: CGPoint(x: ox, y: oy), radius: outerRadius, startAngle: thetaCCW, endAngle: thetaCW, clockwise: false)
         }
 
         if !cell.isLinkedWith(cell.inward) {
-          CGContextMoveToPoint(ctx, ax, ay)
-          CGContextAddArc(ctx, ox, oy, innerRadius, thetaCCW, thetaCW, 0)
+          ctx.move(to: CGPoint(x: ax, y: ay))
+            ctx.addArc(center: CGPoint(x: ox, y: oy), radius: innerRadius, startAngle: thetaCCW, endAngle: thetaCW, clockwise: false)
         }
 
         if !cell.isLinkedWith(cell.ccw) && cell != cell.ccw {
@@ -58,6 +58,6 @@ public class PolarWallwiseGeometryGenerator : GeometryGenerator {
       }
     }
     
-    CGContextStrokePath(ctx)
+    ctx.strokePath()
   }
 }

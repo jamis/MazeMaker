@@ -1,12 +1,12 @@
-public class Cell: Hashable {
-  private(set) var links : Set<Cell> = []
-  public private(set) var location : Location
+open class Cell: Hashable {
+  fileprivate(set) var links : Set<Cell> = []
+  open fileprivate(set) var location : Location
 
-  public var hashValue: Int {
+  open var hashValue: Int {
     return location.hashValue
   }
 
-  public var neighbors: Set<Cell> {
+  open var neighbors: Set<Cell> {
     preconditionFailure("neighbors must be overridden in subclasses");
   }
 
@@ -14,25 +14,25 @@ public class Cell: Hashable {
     self.location = location
   }
 
-  func linkOnceWith(neighbor: Cell) {
+  func linkOnceWith(_ neighbor: Cell) {
     links.insert(neighbor)
   }
 
-  func unlinkOnceFrom(neighbor: Cell) {
+  func unlinkOnceFrom(_ neighbor: Cell) {
     links.remove(neighbor)
   }
 
-  public func linkWith(neighbor: Cell) {
+  open func linkWith(_ neighbor: Cell) {
     linkOnceWith(neighbor)
     neighbor.linkOnceWith(self)
   }
 
-  public func unlinkFrom(neighbor: Cell) {
+  open func unlinkFrom(_ neighbor: Cell) {
     unlinkOnceFrom(neighbor)
     neighbor.unlinkOnceFrom(self)
   }
 
-  public func isLinkedWith(neighbor: Cell?) -> Bool {
+  open func isLinkedWith(_ neighbor: Cell?) -> Bool {
     if let neighbor = neighbor {
       return links.contains(neighbor)
     } else {
@@ -40,11 +40,11 @@ public class Cell: Hashable {
     }
   }
 
-  public func isDeadEnd() -> Bool {
+  open func isDeadEnd() -> Bool {
     return links.count == 1
   }
 
-  public func reset() {
+  open func reset() {
     links.removeAll()
   }
 }

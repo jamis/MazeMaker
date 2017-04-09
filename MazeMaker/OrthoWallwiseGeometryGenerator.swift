@@ -1,10 +1,10 @@
-public class OrthoWallwiseGeometryGenerator : GeometryGenerator {
+open class OrthoWallwiseGeometryGenerator : GeometryGenerator {
   let grid: Grid
   let layout: OrthogonalLayout
   let scale: CGFloat
   let margin: CGFloat
 
-  public let bounds: CGRect
+  open let bounds: CGRect
 
   public required init(grid: Grid, scale: CGFloat, margin: CGFloat) {
     self.grid = grid
@@ -16,14 +16,14 @@ public class OrthoWallwiseGeometryGenerator : GeometryGenerator {
       height: CGFloat(layout.rows) * scale + margin*2)
   }
 
-  public func render(ctx: CGContextRef) {
-    UIColor.blackColor().setStroke()
-    UIColor.whiteColor().setFill()
+  open func render(_ ctx: CGContext) {
+    UIColor.black.setStroke()
+    UIColor.white.setFill()
 
-    CGContextFillRect(ctx, bounds)
+    ctx.fill(bounds)
 
-    CGContextSetLineCap(ctx, CGLineCap.Round)
-    CGContextSetLineWidth(ctx, 1.0)
+    ctx.setLineCap(CGLineCap.round)
+    ctx.setLineWidth(1.0)
 
     for cell in grid.cells {
       if let cell = cell as? OrthogonalCell {
@@ -34,27 +34,27 @@ public class OrthoWallwiseGeometryGenerator : GeometryGenerator {
         let y2 = CGFloat(cell.gridLocation.row+1) * scale + margin
 
         if cell.north == nil {
-          CGContextMoveToPoint(ctx, x, y)
-          CGContextAddLineToPoint(ctx, x2, y)
+          ctx.move(to: CGPoint(x: x, y: y))
+          ctx.addLine(to: CGPoint(x: x2, y: y))
         }
 
         if cell.west == nil {
-          CGContextMoveToPoint(ctx, x, y)
-          CGContextAddLineToPoint(ctx, x, y2)
+          ctx.move(to: CGPoint(x: x, y: y))
+          ctx.addLine(to: CGPoint(x: x, y: y2))
         }
 
         if !cell.isLinkedWith(cell.south) {
-          CGContextMoveToPoint(ctx, x, y2)
-          CGContextAddLineToPoint(ctx, x2, y2)
+          ctx.move(to: CGPoint(x: x, y: y2))
+          ctx.addLine(to: CGPoint(x: x2, y: y2))
         }
 
         if !cell.isLinkedWith(cell.east) {
-          CGContextMoveToPoint(ctx, x2, y)
-          CGContextAddLineToPoint(ctx, x2, y2)
+          ctx.move(to: CGPoint(x: x2, y: y))
+          ctx.addLine(to: CGPoint(x: x2, y: y2))
         }
       }
     }
     
-    CGContextStrokePath(ctx)
+    ctx.strokePath()
   }
 }

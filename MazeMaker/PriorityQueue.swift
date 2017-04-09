@@ -1,51 +1,51 @@
 public enum PriorityWeighting {
-  case LowestFirst, HighestFirst
+  case lowestFirst, highestFirst
 }
 
-public class PriorityQueue<U: Hashable> {
+open class PriorityQueue<U: Hashable> {
   public typealias Pair = (item: U, priority: Int)
 
-  private let heap: BinaryHeap<Pair>
-  private var priorities: [U: Int] = [:]
+  fileprivate let heap: BinaryHeap<Pair>
+  fileprivate var priorities: [U: Int] = [:]
 
-  public var isEmpty: Bool {
+  open var isEmpty: Bool {
     return heap.isEmpty
   }
 
-  public init(compare: (Pair, Pair) -> HeapComparisonResult) {
+  public init(compare: @escaping (Pair, Pair) -> HeapComparisonResult) {
     heap = BinaryHeap<Pair>(compare: compare)
   }
 
   public convenience init(weighting: PriorityWeighting) {
     let lowestFirst = { (a: Pair, b: Pair) -> HeapComparisonResult in
         if a.priority < b.priority {
-          return .Higher
+          return .higher
         } else if a.priority > b.priority {
-          return .Lower
+          return .lower
         } else {
-          return .Equal
+          return .equal
         }
       }
 
     let highestFirst = { (a: Pair, b: Pair) -> HeapComparisonResult in
       if a.priority > b.priority {
-        return .Higher
+        return .higher
       } else if a.priority < b.priority {
-        return .Lower
+        return .lower
       } else {
-        return .Equal
+        return .equal
       }
     }
 
     switch weighting {
-    case .LowestFirst:
+    case .lowestFirst:
       self.init(compare: lowestFirst)
-    case .HighestFirst:
+    case .highestFirst:
       self.init(compare: highestFirst)
     }
   }
 
-  public subscript(element: U) -> Int? {
+  open subscript(element: U) -> Int? {
     get {
       return priorities[element]
     }
@@ -54,7 +54,7 @@ public class PriorityQueue<U: Hashable> {
       let newValue = newValue!
 
       if let priority = priorities[element] {
-        heap.deleteElement((element, priority))
+        _ = heap.deleteElement((element, priority))
       }
 
       heap.insert((element, newValue))
@@ -62,7 +62,7 @@ public class PriorityQueue<U: Hashable> {
     }
   }
 
-  public func fromCollection<S: CollectionType where S.Generator.Element == Pair>(collection: S) {
+  open func fromCollection<S: Collection where S.Iterator.Element == Pair>(_ collection: S) {
     priorities.removeAll()
 
     for pair in collection {
@@ -72,9 +72,9 @@ public class PriorityQueue<U: Hashable> {
     heap.buildHeap(collection)
   }
 
-  public func next() -> Pair? {
+  open func next() -> Pair? {
     if let pair = heap.delete() {
-      priorities.removeValueForKey(pair.item)
+      priorities.removeValue(forKey: pair.item)
       return pair
     }
 
