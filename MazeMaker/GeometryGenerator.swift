@@ -2,5 +2,5 @@ public protocol GeometryGenerator {
   var bounds: CGRect { get }
 
   init(grid: Grid, scale: CGFloat, margin: CGFloat)
-  func render(ctx: CGContextRef)
+  func render(_ ctx: CGContext)
 }

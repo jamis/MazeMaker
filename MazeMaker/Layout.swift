@@ -1,4 +1,4 @@
 public protocol Layout {
-  func build(grid: Grid)
-  func renderAsString(grid: Grid) -> String
+  func build(_ grid: Grid)
+  func renderAsString(_ grid: Grid) -> String
 }

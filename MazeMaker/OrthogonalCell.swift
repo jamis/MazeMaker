@@ -1,14 +1,14 @@
-public class OrthogonalCell: Cell {
-  public var gridLocation: GridLocation {
+open class OrthogonalCell: Cell {
+  open var gridLocation: GridLocation {
     return location as! GridLocation
   }
 
-  public var north: OrthogonalCell? = nil
-  public var south: OrthogonalCell? = nil
-  public var east: OrthogonalCell? = nil
-  public var west: OrthogonalCell? = nil
+  open var north: OrthogonalCell? = nil
+  open var south: OrthogonalCell? = nil
+  open var east: OrthogonalCell? = nil
+  open var west: OrthogonalCell? = nil
 
-  public override var neighbors: Set<Cell> {
+  open override var neighbors: Set<Cell> {
     var neighbors: Set<Cell> = Set()
     if let north = north { neighbors.insert(north) }
     if let south = south { neighbors.insert(south) }

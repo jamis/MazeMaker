@@ -1,26 +1,26 @@
 public enum HeapComparisonResult {
-  case Higher, Equal, Lower
+  case higher, equal, lower
 }
 
-public class BinaryHeap<U> {
-  private var list: [U] = []
-  private let compare: (U, U) -> HeapComparisonResult
+open class BinaryHeap<U> {
+  fileprivate var list: [U] = []
+  fileprivate let compare: (U, U) -> HeapComparisonResult
 
-  public var isEmpty: Bool {
+  open var isEmpty: Bool {
     return list.isEmpty
   }
 
-  public init(compare: (U, U) -> HeapComparisonResult) {
+  public init(compare: @escaping (U, U) -> HeapComparisonResult) {
     self.compare = compare
   }
 
-  public func insert(value: U) {
+  open func insert(_ value: U) {
     list.append(value)
 
     var child = list.count - 1
     while child > 0 {
       let parent = (child - 1) / 2
-      if compare(list[child], list[parent]) == .Higher {
+      if compare(list[child], list[parent]) == .higher {
         let tmp = list[child]
         list[child] = list[parent]
         list[parent] = tmp
@@ -31,16 +31,16 @@ public class BinaryHeap<U> {
     }
   }
 
-  public func buildHeap<S: CollectionType where S.Generator.Element == U>(list: S) {
+  open func buildHeap<S: Collection where S.Iterator.Element == U>(_ list: S) {
     self.list = Array(list)
     reheapify()
   }
 
-  public func peek() -> U? {
+  open func peek() -> U? {
     return list[0]
   }
 
-  public func delete() -> U? {
+  open func delete() -> U? {
     let value = list[0]
     let least = list.popLast()
 
@@ -52,7 +52,7 @@ public class BinaryHeap<U> {
     return value
   }
 
-  public func deleteElement(element: U) -> U? {
+  open func deleteElement(_ element: U) -> U? {
     if let index = searchSubtree(0, forElement: element) {
       deleteAt(index)
       return element
@@ -61,7 +61,7 @@ public class BinaryHeap<U> {
     return nil
   }
 
-  private func deleteAt(index: Int) {
+  fileprivate func deleteAt(_ index: Int) {
     if index > 0 {
       let tmp = list[0]
       list[0] = list[index]
@@ -72,27 +72,27 @@ public class BinaryHeap<U> {
     delete()
   }
 
-  private func searchSubtree(root: Int, forElement element: U) -> Int? {
+  fileprivate func searchSubtree(_ root: Int, forElement element: U) -> Int? {
     let left = root * 2 + 1
     let right = root * 2 + 2
 
     switch compare(element, list[root]) {
-    case .Higher:
+    case .higher:
       return nil // no match
 
-    case .Equal:
+    case .equal:
       return root
 
-    case .Lower:
-      let leftWise = (left < list.count) ? compare(element, list[left]) : .Higher
-      if leftWise != .Higher {
+    case .lower:
+      let leftWise = (left < list.count) ? compare(element, list[left]) : .higher
+      if leftWise != .higher {
         if let result = searchSubtree(left, forElement: element) {
           return result
         }
       }
 
-      let rightWise = (right < list.count) ? compare(element, list[right]) : .Higher
-      if rightWise != .Higher {
+      let rightWise = (right < list.count) ? compare(element, list[right]) : .higher
+      if rightWise != .higher {
         if let result = searchSubtree(right, forElement: element) {
           return result
         }
@@ -102,23 +102,23 @@ public class BinaryHeap<U> {
     return nil
   }
 
-  private func reheapify() {
+  fileprivate func reheapify() {
     var i = (list.count - 2) / 2
     while i >= 0 {
       heapifyFrom(i)
-      i--
+      i -= 1
     }
   }
 
-  private func heapifyFrom(root: Int) {
+  fileprivate func heapifyFrom(_ root: Int) {
     let left = root * 2 + 1
     let right = root * 2 + 2
 
     var highest = root
 
-    if right < list.count && compare(list[right], list[root]) == .Higher && compare(list[right], list[left]) == .Higher {
+    if right < list.count && compare(list[right], list[root]) == .higher && compare(list[right], list[left]) == .higher {
       highest = right
-    } else if left < list.count && compare(list[left], list[root]) == .Higher {
+    } else if left < list.count && compare(list[left], list[root]) == .higher {
       highest = left
     }
 

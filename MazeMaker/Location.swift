@@ -1,6 +1,6 @@
-public class Location: Hashable {
-  public var hashValue: Int { return 0 }
-  public func isEqual(location: Location) -> Bool {
+open class Location: Hashable {
+  open var hashValue: Int { return 0 }
+  open func isEqual(_ location: Location) -> Bool {
     return hashValue == location.hashValue
   }
 }
